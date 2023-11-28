@@ -1,4 +1,4 @@
-package br.com.gamebarato.gamebarato
+package br.com.gamebarato
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
