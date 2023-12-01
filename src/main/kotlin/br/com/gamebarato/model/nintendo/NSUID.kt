@@ -1,11 +1,12 @@
 package br.com.gamebarato.model.nintendo
 
+import com.fasterxml.jackson.annotation.JsonCreator
+import com.fasterxml.jackson.annotation.JsonProperty
 
 
-
-data class NSUID (
-    var value: String? = null,
-    var matchLevel: String? = null,
-    val fullyHighlighted: Boolean,
-    var matchedWords: ArrayList<String> = arrayListOf()
+data class NSUID @JsonCreator constructor (
+    @JsonProperty("value") var value: String? = null,
+    @JsonProperty("matchLevel") var matchLevel: String? = null,
+    @JsonProperty("fullyHighlighted") val fullyHighlighted: Boolean,
+    @JsonProperty("matchedWords") var matchedWords: ArrayList<String> = arrayListOf()
 )

@@ -1,6 +1,9 @@
 package br.com.gamebarato.model.nintendo
 
-data class Fetch(
-    val query: Int,
-    val total: Int
+import com.fasterxml.jackson.annotation.JsonCreator
+import com.fasterxml.jackson.annotation.JsonProperty
+
+data class Fetch @JsonCreator constructor (
+    @JsonProperty("query") val query: Int,
+    @JsonProperty("total") val total: Int
 )

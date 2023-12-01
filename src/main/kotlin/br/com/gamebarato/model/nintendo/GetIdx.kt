@@ -1,6 +1,9 @@
 package br.com.gamebarato.model.nintendo
 
-data class GetIdx(
-    val total: Int,
-    val unload: Int
+import com.fasterxml.jackson.annotation.JsonCreator
+import com.fasterxml.jackson.annotation.JsonProperty
+
+data class GetIdx @JsonCreator constructor (
+    @JsonProperty("total") val total: Int,
+    @JsonProperty("unload") val unload: Int
 )

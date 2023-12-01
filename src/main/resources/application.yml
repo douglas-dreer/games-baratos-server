@@ -1,5 +1,19 @@
 server:
   port: 8081
 spring:
+  main:
+    allow-bean-definition-overriding: true
   application:
     name: game-barato-server
+  jackson:
+    jackson:
+      serialization:
+        write-dates-as-timestamps: false
+      deserialization:
+        read-date-timestamps: false
+eshop-client:
+  base-url: https://u3b6gr4ua3-dsn.algolia.net/
+  api-key: ${API_KEY:c4da8be7fd29f0f5bfa42920b0a99dc7}
+  application-id: ${APPLICATION_ID:U3B6GR4UA3}
+
+

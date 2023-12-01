@@ -1,3 +1,5 @@
 package br.com.gamebarato.model.nintendo
 
-class RenderingContent(){}
+import com.fasterxml.jackson.annotation.JsonCreator
+
+class RenderingContent @JsonCreator constructor(){}
