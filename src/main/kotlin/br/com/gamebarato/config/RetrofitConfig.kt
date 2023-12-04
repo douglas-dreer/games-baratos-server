@@ -26,7 +26,10 @@ class RetrofitConfig {
             .addInterceptor { chain ->
                 val original = chain.request()
                 val request = original.newBuilder()
-                    .header("Access-Control-Allow-Headers", "x-algolia-application-id,connection,origin,x-algolia-api-key,content-type,content-length,x-algolia-signature,x-algolia-user-id,x-algolia-usertoken,x-algolia-tagfilters,DNT,X-Mx-ReqToken,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Authorization,Accept,Pragma")
+                    .header(
+                        "Access-Control-Allow-Headers",
+                        "x-algolia-application-id,connection,origin,x-algolia-api-key,content-type,content-length,x-algolia-signature,x-algolia-user-id,x-algolia-usertoken,x-algolia-tagfilters,DNT,X-Mx-ReqToken,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Authorization,Accept,Pragma"
+                    )
                     .header("X-Algolia-Api-Key", apiKey)
                     .header("X-Algolia-Application-Id", applicationId)
                     .method(original.method, original.body)
