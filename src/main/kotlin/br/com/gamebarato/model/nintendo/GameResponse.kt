@@ -5,8 +5,9 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties
 import com.fasterxml.jackson.annotation.JsonProperty
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-data class GameResponse @JsonCreator constructor (
-    @JsonProperty("hits") val hits: ArrayList<Hits>,
+data class GameResponse
+@JsonCreator constructor(
+    @JsonProperty("hits") var hits: ArrayList<Hits>?,
     @JsonProperty("nbHits") val nbHits: Int,
     @JsonProperty("hitsPerPage") val hitsPerPage: Int,
     @JsonProperty("page") val page: Int,
@@ -18,4 +19,22 @@ data class GameResponse @JsonCreator constructor (
     @JsonProperty("params") val params: String,
     @JsonProperty("renderingContent") val renderingContent: RenderingContent? = null,
     @JsonProperty("exhaustive") val exhaustive: Exhaustive
-)
+) {
+    constructor() : this(
+        ArrayList(),
+        0,
+        0,
+        0,
+        0,
+        "",
+        false,
+        false,
+        "",
+        "",
+        null,
+        Exhaustive()
+    )
+}
+
+
+

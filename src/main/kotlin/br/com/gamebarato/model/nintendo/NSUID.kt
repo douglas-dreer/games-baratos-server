@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator
 import com.fasterxml.jackson.annotation.JsonProperty
 
 
-data class NSUID @JsonCreator constructor (
+data class NSUID @JsonCreator constructor(
     @JsonProperty("value") var value: String? = null,
     @JsonProperty("matchLevel") var matchLevel: String? = null,
     @JsonProperty("fullyHighlighted") val fullyHighlighted: Boolean,
